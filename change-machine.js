@@ -7,7 +7,9 @@ let cents = Number(centAsAString);
 
 let quarters = Math.floor(cents / 25);
 console.log(quarters + "quarters");
-cents = cents % 25;
+//cents = cents % 25;
+cents -= quarters * 25;
+console.log('cents = ' + cents);
 
 let dimes = Math.floor(cents / 10);
 console.log(dimes + "dimes");
