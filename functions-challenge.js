@@ -68,8 +68,8 @@ function parrotTrouble(talking, hour) {
     return true;
   } else {
     return false;
+  }
 }
-
 
 /******************************************************************************
                                    alarmClock
@@ -88,10 +88,10 @@ alarmClock(0, false) → "10:00"
 *******************************************************************************/
 
 function alarmClock(day, vacation) {
-  if(day >= 1 && day < = 5)
-  return "7:00"
-} else {
-  
+//   if(day >= 1 && day <= 5)
+//   return "7:00"
+// } else {
+
 
 }
 
@@ -114,7 +114,18 @@ caughtSpeeding(65, true) → 0
 *******************************************************************************/
 
 function caughtSpeeding(speed, isBirthday) {
+ // If it's my birthday, my "effective" speed is 5 mph less.
+ if(isBirthday) {
+   speed -= 5;
+}
 
+  if (speed  <= 60) {
+    return 0;
+  } else if (speed >= 61 && speed <= 80) {
+    return 1;
+  } else {
+    return 2;
+  }
 }
 
 /****************************************************************************
