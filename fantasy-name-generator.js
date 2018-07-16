@@ -1,4 +1,4 @@
-// Author: FirstName LastName
+// Author: Devin Mateo-Walker
 var readline = require("readline-sync");
 
 // global variables
@@ -13,6 +13,10 @@ var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
 *******************************************************************************/
 
 function getNewFirstName() {
+  let firstName = "Devin";
+  let lastName = "Mateo-Walker";
+
+  getNewFirstName = firstName.substring(0, 3) + lastName.substring(0, 2).tolowerCase; 
 
 }
 
