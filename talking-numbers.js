@@ -79,7 +79,7 @@ function sayTenNineteen(num) {
     return "seventeen";
   } else if (18 === num) {
     return "eightteen";
-  } else {
+  } else if (19 === num){
     return "nineteen";
   }
 }
@@ -144,26 +144,26 @@ function sayNumber(num) {
   if (num === 0) {
     wordForm = "zero";
   } else {
-    let thousandsNum = Math.floor(num / 1000);
-    let thousandsStringNum = sayZeroNine(thousandsNum) + "-thousand";
-    let hundredsNum = Math.floor((num % 1000) / 100);
-    let hundredsStringNum = sayZeroNine(hundredsNum) + "-hundred";
-    let tensNum = Math.floor((num % 100) / 10);
-    let tensStringsNum = sayTwentyNinety(tensNum);
-    let onesNum = Math.floor(num % 10);
-    let onesStringsNum = sayZeroNine(onesNum);
-
-    if(thousandsNum !== 0) {
-      wordForm += thousandsStringNum + " ";
+    let one = num % 10;
+    let tens = Math.floor(num / 10) % 10;
+    let hundreds = Math.floor(num / 100) % 10;
+    let thousands = Math.floor(num / 1000);
+    if(thousands > 0) {
+      wordForm += sayOneNine(thousands) + "-thousands";
+  }
+    if(hundreds > 0) {
+      wordForm += sayOneNine(hundreds) + "-hundreds";
+  }
+  if(tens === 1){
+    wordForm += sayTenNineteen(10 + ones );
+  } else {
+    wordForm += sayTwentyNinety(tens);
+  }
+  if(ones > 0 && tens !== 1)
+    if(tens >= 2) {
+      wordForm += "-";
     }
-    if(hundredsNum !== 0) {
-      wordForm += hundredsStringNum + " ";
-    }
-    if(tensNum !== 0) {
-      wordForm += tensStringsNum + "-";
-    }
-    if(onesNum !== 0) {
-      wordForm += onesStringsNum + " ";
+    worForm += sayOneNine(ones);
     }
   }
   return wordForm;
@@ -176,8 +176,9 @@ function sayNumber(num) {
 *******************************************************************************/
 function run() {
   printGreeting();
-  let enterNumber = Number(readline.question("Please enter any number between 0 to 9999: "));
-  console.log("Word form: " + sayNumber(enterNumber));
+  let Number = readline.question("Please enter any number between 0 to 9999: ");
+  console.log("Word Form: " + sayNumber(number));
+
 }
 
 // Run the program!
