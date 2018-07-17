@@ -13,11 +13,7 @@ var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
 *******************************************************************************/
 
 function getNewFirstName() {
-  let firstName = "Devin";
-  let lastName = "Mateo-Walker";
-
-  getNewFirstName = firstName.substring(0, 3) + lastName.substring(0, 2).tolowerCase; 
-
+  return firstName.substring(0, 3) + lastName.substring(0, 2).toLowerCase();
 }
 
 /******************************************************************************
@@ -29,7 +25,7 @@ function getNewFirstName() {
 *******************************************************************************/
 
 function getNewLastName() {
-
+  return momMaidenName.substring(0, 2) + cityBorn.substring(0, 3).toLowerCase();
 }
 
 /******************************************************************************
@@ -40,7 +36,7 @@ function getNewLastName() {
 *******************************************************************************/
 
 function getTitle() {
-
+  return lastName.charAt(lastName.length - 1) + lastName.charAt(lastName.length - 2) + lastName.charAt(lastName.length - 3) + dreamCar.toLowerCase();
 }
 
 /******************************************************************************
@@ -65,7 +61,23 @@ function getHonorific() {
 *******************************************************************************/
 
 function run() {
+  firstName = readline.question("What is your first name: ");
+  lastName = readline.question("What is your last name: ");
+  momMaidenName = readline.question("What is your mom's maiden name: ");
+  cityBorn = readline.question("What city were you born in: ");
+  street = readline.question("What street do you live on: ");
+  dreamCar = readline.question("What is your dream car: ");
+  console.log("All hail " + getNewFirstName() + " " + getNewLastName() + ", " + getTitle() + " of " + street);
 
+
+  // firstName = "Devin";
+  // lastName = "Mateo";
+  // momMaidenName = "Campbell";
+  // cityBorn = "Oakland";
+  // dreamCar = "Camero";
+  // street = "Macarthur";
+  // fantasyName =
+  
 }
 
 // Run the program!
