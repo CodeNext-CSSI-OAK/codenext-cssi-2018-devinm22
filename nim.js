@@ -48,7 +48,8 @@ function printGreeting() {
 *******************************************************************************/
 
 function setupGame() {
-
+  stonesRemaining = 10;
+  activePlayer = Math.floor(math.random() * 2);
 }
 
 /******************************************************************************
@@ -62,7 +63,12 @@ function setupGame() {
 *******************************************************************************/
 
 function printStones() {
-
+  let stones = "";
+  for(let i = 0; i < stonesRemaining; i++) {
+    stones += "0";
+  }
+  console.log(stones);
+  console.log("Number of stones remaining:")
 }
 
 /******************************************************************************
@@ -126,7 +132,7 @@ function processResult() {
 *******************************************************************************/
 
 function run() {
-
+  
 }
 
 // Run the program!

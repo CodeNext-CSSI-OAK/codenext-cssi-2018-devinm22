@@ -14,11 +14,17 @@ stringTimes("Hi", 1) → "Hi"
 *******************************************************************************/
 
 function stringTimes(str, n) {
+  let returnString = "";
+  for(let i = 0; i < n; i++) {
+    returnString  += str;
+  }
 
+  return returnString;
 }
 
 // Test this function.
 testStringTimes();
+
 
 /******************************************************************************
                                    countXX()
@@ -34,7 +40,13 @@ countXX("xxxx") → 3
 *******************************************************************************/
 
 function countXX(str) {
-
+  let countX = 0;
+  for(i = 0; i < str.length; i++) {
+    if(str.substring(i, i +2) === "xx") {
+      countX++;
+    }
+  }
+  return countX;
 }
 
 // Test this function.
